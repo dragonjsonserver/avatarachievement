@@ -47,7 +47,7 @@ class Module
     public function init(\Zend\ModuleManager\ModuleManager $moduleManager)
     {
     	$sharedManager = $moduleManager->getEventManager()->getSharedManager();
-    	$sharedManager->attach('DragonJsonServerAvatar\Service\Avatar', 'removeavatar', 
+    	$sharedManager->attach('DragonJsonServerAvatar\Service\Avatar', 'RemoveAvatar', 
 	    	function (\DragonJsonServerAvatar\Event\RemoveAvatar $eventRemoveAvatar) {
 	    		$serviceAvatarachievement = $this->getServiceManager()->get('Avatarachievement');
 	    		$serviceAvatarachievement->removeAvatarachievementsByAvatarId($eventRemoveAvatar->getAvatar()->getAvatarId());
