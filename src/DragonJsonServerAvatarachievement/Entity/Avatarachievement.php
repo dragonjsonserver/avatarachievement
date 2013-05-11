@@ -43,6 +43,7 @@ class Avatarachievement extends \DragonJsonServerAchievement\Entity\AbstractAchi
 	public function toArray()
 	{
 		return parent::toArray() + [
+			'entity' => 'Avatarachievement',
 			'avatarachievement_id' => $this->getAvatarachievementId(),
 			'avatar_id' => $this->getAvatarId(),
 		];
