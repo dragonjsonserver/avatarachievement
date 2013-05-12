@@ -28,6 +28,17 @@ class Avatarachievement extends \DragonJsonServerAchievement\Entity\AbstractAchi
 	protected $avatarachievement_id;
 	
 	/**
+	 * Setzt die ID der Avatarherausforderung
+	 * @param integer $avatarachievement_id
+	 * @return Avatarachievement
+	 */
+	protected function setAvatarachievementId($avatarachievement_id)
+	{
+		$this->avatarachievement_id = $avatarachievement_id;
+		return $this;
+	}
+	
+	/**
 	 * Gibt die ID der Avatarherausforderung zurück
 	 * @return integer
 	 */
@@ -37,13 +48,24 @@ class Avatarachievement extends \DragonJsonServerAchievement\Entity\AbstractAchi
 	}
 	
 	/**
+	 * Setzt die Attribute der Avatarherausforderung aus dem Array
+	 * @param array $array
+	 * @return Avatarachievement
+	 */
+	public function fromArray(array $array)
+	{
+		return parent::fromArray($array)
+			->setAvatarachievementId($array['avatarachievement_id'])
+			->setAvatarId($array['avatar_id']);
+	}
+	
+	/**
 	 * Gibt die Attribute der Avatarherausforderung als Array zurück
 	 * @return array
 	 */
 	public function toArray()
 	{
 		return parent::toArray() + [
-			'entity' => 'Avatarachievement',
 			'avatarachievement_id' => $this->getAvatarachievementId(),
 			'avatar_id' => $this->getAvatarId(),
 		];
