@@ -49,7 +49,7 @@ class Module
     	$sharedManager = $moduleManager->getEventManager()->getSharedManager();
     	$sharedManager->attach('DragonJsonServerAvatar\Service\Avatar', 'RemoveAvatar', 
 	    	function (\DragonJsonServerAvatar\Event\RemoveAvatar $eventRemoveAvatar) {
-	    		$serviceAvatarachievement = $this->getServiceManager()->get('Avatarachievement');
+	    		$serviceAvatarachievement = $this->getServiceManager()->get('\DragonJsonServerAvatarachievement\Service\Avatarachievement');
 	    		$serviceAvatarachievement->removeAvatarachievementsByAvatarId($eventRemoveAvatar->getAvatar()->getAvatarId());
 	    	}
     	);

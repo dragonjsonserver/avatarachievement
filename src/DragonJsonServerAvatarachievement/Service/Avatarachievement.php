@@ -85,7 +85,7 @@ class Avatarachievement
 	public function changeAvatarachievement($avatar_id, $gamedesign_identifier, $data)
 	{
 		$avatarachievement = $this->getAvatarachievementByAvatarIdAndGamedesignIdentifier($avatar_id, $gamedesign_identifier);
-		$this->getServiceManager()->get('Achievement')->changeAchievement($avatarachievement, $data);
+		$this->getServiceManager()->get('\DragonJsonServerAchievement\Service\Achievement')->changeAchievement($avatarachievement, $data);
 		return $avatarachievement;
 	}
 }

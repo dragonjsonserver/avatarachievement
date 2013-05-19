@@ -26,8 +26,8 @@ class Avatarachievement
 	{
 		$serviceManager = $this->getServiceManager();
 
-		$avatar = $serviceManager->get('Avatar')->getAvatar();
-		$avatarachievements = $serviceManager->get('Avatarachievement')->getAvatarachievementsByAvatarId($avatar->getAvatarId()); 
-		return $serviceManager->get('Doctrine')->toArray($avatarachievements);
+		$avatar = $serviceManager->get('\DragonJsonServerAvatar\Service\Avatar')->getAvatar();
+		$avatarachievements = $serviceManager->get('\DragonJsonServerAvatarachievement\Service\Avatarachievement')->getAvatarachievementsByAvatarId($avatar->getAvatarId()); 
+		return $serviceManager->get('\DragonJsonServerDoctrine\Service\Doctrine')->toArray($avatarachievements);
 	}
 }
